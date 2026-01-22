@@ -5,7 +5,7 @@ import { ProjectCard } from '@/components/project-card';
 import { SkillsSection } from '@/components/skills-section';
 import { ScrollAnimationWrapper } from '@/components/scroll-animation-wrapper';
 import { Button } from '@/components/ui/button';
-import { Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
+import { Github, Linkedin, Mail, ExternalLink, MessageCircle } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Home() {
@@ -136,7 +136,7 @@ export default function Home() {
             </h1>
 
             <p className="text-xl md:text-2xl text-slate-300 mb-2 font-light">
-              ML/AI Engineer • Computer Vision Specialist
+             • AI-ML Enthusiast •
             </p>
 
             <p className="text-sm md:text-base text-slate-400 mb-8 max-w-2xl mx-auto leading-relaxed">
@@ -148,7 +148,10 @@ export default function Home() {
             {/* CTA Buttons */}
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="#projects">
-                <Button className="bg-gray-700 hover:bg-gray-600 text-white px-8 py-6 text-base rounded-lg">
+                <Button
+                  variant="outline"
+                  className="border-gray-600/60 text-gray-200 hover:bg-gray-800/60 px-8 py-6 text-base rounded-lg flex items-center gap-2 bg-transparent"
+                >
                   View My Work
                 </Button>
               </Link>
@@ -159,6 +162,15 @@ export default function Home() {
                 >
                   <Mail size={20} />
                   Get In Touch
+                </Button>
+              </a>
+              <a href="https://wa.me/8447892334" target="_blank" rel="noopener noreferrer">
+                <Button
+                  variant="outline"
+                  className="border-gray-600/60 text-gray-200 hover:bg-gray-800/60 px-8 py-6 text-base rounded-lg flex items-center gap-2 bg-transparent"
+                >
+                  <MessageCircle size={20} />
+                  Chat on WhatsApp
                 </Button>
               </a>
             </div>
@@ -174,12 +186,15 @@ export default function Home() {
               <a href="mailto:shivamkashyap0204@gmail.com" className="text-gray-400 hover:text-gray-200 transition-colors">
                 <Mail size={24} />
               </a>
+              <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-200 transition-colors">
+                <MessageCircle size={24} />
+              </a>
             </div>
 
             {/* Scroll Indicator */}
             <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
               <svg
-                className="w-6 h-6 text-cyan-400"
+                className="w-6 h-6 text-gray-400"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -209,7 +224,7 @@ export default function Home() {
           <div className="space-y-6 text-slate-300 leading-relaxed">
             <ScrollAnimationWrapper variant="fade-up" delay={0.1}>
               <p>
-                I am a Electronics and Communications student at Jaypee Institute of Information
+                I am a Electronics and Communication student at Jaypee Institute of Information
                 Technology with a passion for building intelligent systems that
                 solve real-world problems. My journey in machine learning and
                 computer vision has led me to develop cutting-edge solutions in
@@ -223,6 +238,7 @@ export default function Home() {
                 devices like Raspberry Pi. I combine strong theoretical
                 understanding with practical implementation skills to create
                 production-ready AI systems.
+               
               </p>
             </ScrollAnimationWrapper>
             <ScrollAnimationWrapper variant="fade-up" delay={0.3}>
@@ -265,17 +281,23 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section className="py-20 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
-        <ScrollAnimationWrapper variant="fade-up" className="mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-            Technical Skills
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-gray-500 to-gray-400 rounded-full" />
-        </ScrollAnimationWrapper>
+      <section className="py-20 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto relative overflow-hidden">
+        {/* Animated background elements */}
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gray-600/5 rounded-full blur-3xl opacity-50 animate-pulse" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gray-700/5 rounded-full blur-3xl opacity-50 animate-pulse delay-1000" />
+        
+        <div className="relative z-10">
+          <ScrollAnimationWrapper variant="fade-up" className="mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white via-gray-300 to-gray-400 bg-clip-text text-transparent">
+              Technical Skills
+            </h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-gray-500 via-gray-600 to-gray-400 rounded-full" />
+          </ScrollAnimationWrapper>
 
-        <ScrollAnimationWrapper variant="blur-fade">
-          <SkillsSection categories={skillCategories} />
-        </ScrollAnimationWrapper>
+          <ScrollAnimationWrapper variant="blur-fade">
+            <SkillsSection categories={skillCategories} />
+          </ScrollAnimationWrapper>
+        </div>
       </section>
 
       {/* Projects Section */}
@@ -314,9 +336,21 @@ export default function Home() {
             <ScrollAnimationWrapper variant="fade-up" delay={0.2}>
               <div className="flex flex-wrap justify-center gap-4">
                 <a href="mailto:shivamkashyap0204@gmail.com">
-                  <Button className="bg-gray-700 hover:bg-gray-600 text-white px-8 py-6 text-base rounded-lg flex items-center gap-2">
+                  <Button
+                    variant="outline"
+                    className="border-gray-600/60 text-gray-200 hover:bg-gray-800/60 px-8 py-6 text-base rounded-lg flex items-center gap-2 bg-transparent"
+                  >
                     <Mail size={20} />
                     Send Me an Email
+                  </Button>
+                </a>
+                <a href="https://wa.me/8447892334" target="_blank" rel="noopener noreferrer">
+                  <Button
+                    variant="outline"
+                    className="border-gray-600/60 text-gray-200 hover:bg-gray-800/60 px-8 py-6 text-base rounded-lg flex items-center gap-2 bg-transparent"
+                  >
+                    <MessageCircle size={20} />
+                    Chat on WhatsApp
                   </Button>
                 </a>
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
@@ -346,7 +380,7 @@ export default function Home() {
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate-400 hover:text-cyan-400 transition-colors"
+                className="text-slate-400 hover:text-gray-300 transition-colors"
               >
                 GitHub
               </a>
@@ -354,15 +388,23 @@ export default function Home() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate-400 hover:text-cyan-400 transition-colors"
+                className="text-slate-400 hover:text-gray-300 transition-colors"
               >
                 LinkedIn
               </a>
               <a
                 href="mailto:shivamkashyap0204@gmail.com"
-                className="text-slate-400 hover:text-cyan-400 transition-colors"
+                className="text-slate-400 hover:text-gray-300 transition-colors"
               >
                 Email
+              </a>
+              <a
+                href="https://wa.me/919876543210"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-400 hover:text-gray-300 transition-colors"
+              >
+                WhatsApp
               </a>
             </div>
           </div>
