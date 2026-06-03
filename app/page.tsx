@@ -254,7 +254,7 @@ export default function Home() {
           <div className="grid grid-cols-2 gap-4">
             <ScrollAnimationWrapper variant="scale" delay={0.1}>
               <div className="rounded-lg border border-gray-600/40 bg-slate-900/80 backdrop-blur-sm p-6 hover:bg-gray-700/20 hover:border-gray-500/60 transition-all">
-                <div className="text-3xl font-bold text-gray-300 mb-2">3+</div>
+                <div className="text-3xl font-bold text-gray-300 mb-2">10+</div>
                 <div className="text-sm text-slate-400">Major ML Projects</div>
               </div>
             </ScrollAnimationWrapper>
